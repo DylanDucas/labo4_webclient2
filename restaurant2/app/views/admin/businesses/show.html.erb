@@ -1,0 +1,27 @@
+<!-- 
+10h50 18 octobre 2023 
+Dylan Ducas
+-->
+<div style="margin: 2%;">
+    <h1><%= @business.name %></h1>
+    <h1>Menus</h1>
+    <% @business.menus.each do |menu| %>
+        <h2><%= menu.title %></h2>
+        <% menu.menus.each do |sub_menu| %>
+            <h3><%= sub_menu.title %></h3>
+            <ul>
+                <% sub_menu.items.each do |item| %>
+                    <li>
+                        <%= item.name %>
+                        <br>
+                        <%= item.price %>$
+                        <br>
+                        <%= item.description %>
+                        <hr>
+                    </li>
+                <% end %>
+            </ul>
+        <% end %>
+    <% end %>
+</div>
+

@@ -1,0 +1,15 @@
+<!-- 
+10h47 18 octobre 2023 
+Dylan Ducas
+-->
+<div style="margin: 2%;">
+    <table>
+        <% @businesses.each do |business| %>
+            <tr>
+                <td><%= business.id %></td>
+                <td><%= business.name %></td>
+                <td><%= link_to "Détails","/admin/businesses/#{business.id}" %></td>
+            </tr>
+        <% end %>
+    </table>
+</div>
